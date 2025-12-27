@@ -1,0 +1,56 @@
+Hem de fer:
+- Entrenador notifica als jugadors de la pista.
+- Àrbitre amonesta al jugador X.
+- Entrenador ordena que el Jugador X substitueix al jugador Y.
+
+Les Classes que s'han creat han sigut:
+
+- Polimorfica: 
+    - Persona: Es basicament un constructor, el virtual vol dir que "activa" el polimorfisme. 
+    Això implica que les classes Jugador, Entrenador i Arbitre són Persones, però d'una altre forma, 
+    ja que aquestes implementen funcions, s'instancien de maneres diferents
+
+- Normals:
+    Les que hereten el comportament de persona anomenades anteriorment:
+    - Entrenador: Haura de poder enviar el missatge i fer els canvis entre jugadors.
+    - Jugador: Haura de poder rebre el missatge, canviar el seu rol (haurem de implementar el Strategy) i ser amonestat i canviar el seu estat
+    - Arbitre: Haura de poder amonestar als jugadors
+
+    - Auxiliars:
+        Ho són totes aquelles que formen part del strategy com ara:
+        - extremEsquerra
+        - extremDret
+        - lateralEsquerra
+        - lateralDret
+        - pivot
+        - central
+        - lateralEsquerraCentrat: explicitament de rolAtacant
+        - lateralDretCentrat: explicitament de rolAtacant
+        - avançat: explicitament de rolDefensant
+
+- Interficies: 
+    Ens ajudaran a fer el strategy per canviar els rols dels jugadors:
+    - rolAtacant:
+    - rolDefensant:
+
+Plantejament:
+
+El progrma seguirà el funcionament bàsic ed totes les pràctiques de programació:
+    - main.cpp que llegeix un fitxer (*1), crea "el partit actual" (posat entre parentesi perquè realment implementem 
+    el necessari per a les opcions demanades).
+    - Gestor d'opcions (1 = entrenador envia misatge, 2 = arbitre amonesta, 3 = Entrenador fa substitució entre 2 jugadors
+    (unicament entre pista i banqueta))
+    - Classes amb métodes que fan tot.
+    - Afegirem un altre fitxer (o script, no ho tinc clar) que farà tots els casos d'execució.
+
+(*1) Aquest fitxer es el que trobaràs a la carpeta de joc de proves, no el toquis (organitzarem la lectura a partir d'ell), 
+es el "volsCurt.txt" d'aqui.
+En teoria volem intentar fer un molt bon fitxer per a que amb les entrades correctes es demostri el funcionament de tots els casos que tenim
+p.e. un cas on l'amonestat també l'hem d'expulsar, un cas on nomes te tarjeta...
+
+Hem acordat que implementarem el strategy dels rols, es a dir, les interfícies de rolAtacant i rolDefensant.
+
+Extra que ha dit el chat que t'escrigui:
+
+virtual → quan crides un mètode des d’un Persona*/Persona&, s’executa la versió real (Jugador/Entrenador/Arbitre).
+= 0 → fa que el mètode sigui virtual pur i la classe sigui abstracta (no instanciable).

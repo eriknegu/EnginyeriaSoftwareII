@@ -1,16 +1,19 @@
 #ifndef LATERALDRETCENTRAT_H
 #define LATERALDRETCENTRAT_H
 
-#pragma once
+#include "rolAtacant.h"
+#include <string>
 
-class lateralDretCentrat
+using namespace std;
+
+class lateralDretCentrat : public rolAtacant
 {
 public:
-    lateralDretCentrat();
-    ~lateralDretCentrat();
+    lateralDretCentrat();           // constructor per defecte
+    ~lateralDretCentrat() override; // destructor virtual (override)
 
-private:
-
+    void ataca() override;       // implementa el comportament d'atac
+    string nom() const override; // nom del rol (per mostrar / debug)
 };
 
 #endif

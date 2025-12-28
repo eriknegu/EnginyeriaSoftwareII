@@ -1,16 +1,16 @@
-#ifndef DEFENSA_CENTAL_H
-#define DEFENSA_CENTAL_H
+#ifndef DEFENSA_PORTER_H
+#define DEFENSA_PORTER_H
 
 #include "rolDefensant.h"
 #include <string>
 
 using namespace std;
 
-class defensa_central : public rolDefensant
+class defensa_porter : public rolDefensant
 {
 public:
-    defensa_central();           // constructor per defecte
-    ~defensa_central() override; // destructor virtual (override)
+    defensa_porter();           // constructor per defecte
+    ~defensa_porter() override; // destructor virtual (override)
 
     void defensa() override;     // implementa el comportament de defensa
     string nom() const override; // nom del rol (per mostrar / debug)

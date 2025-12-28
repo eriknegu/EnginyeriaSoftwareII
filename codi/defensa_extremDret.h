@@ -1,16 +1,19 @@
 #ifndef DEFENSA_EXTREMDRET_H
 #define DEFENSA_EXTREMDRET_H
 
-#pragma once
+#include "rolDefensant.h"
+#include <string>
 
-class defensa_extremDret
+using namespace std;
+
+class defensa_extremDret : public rolDefensant
 {
 public:
-    defensa_extremDret();
-    ~defensa_extremDret();
+    defensa_extremDret();           // constructor per defecte
+    ~defensa_extremDret() override; // destructor virtual (override)
 
-private:
-
+    void defensa() override;     // implementa el comportament de defensa
+    string nom() const override; // nom del rol (per mostrar / debug)
 };
 
 #endif

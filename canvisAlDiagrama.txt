@@ -1,0 +1,13 @@
+JUGADOR
+Afegir dorsal
+void rebreSancio(const string &Tipus); // Cal afegir al diagrama de classes
+estatJugador _estatActual; // Cal canviar estatJoc per estatJugador al diagrama de classes (nom malament)
+
+MISSATGE
+Persona -> string, en comptes de guardar tota la persona guardem el nom complet.
+
+STRATEGY
+Hem d'afegir els porters
+
+
+

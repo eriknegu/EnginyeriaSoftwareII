@@ -3,18 +3,76 @@
 #include <string>
 #include <list>
 #include <memory>
+#include <vector>
+#include <sstream>
+#include <string>
+
+#include "Arbitre.h"
+#include "Equip.h"
+#include "Entrenador.h"
+#include "eines.h"
 
 using namespace std;
 
-void carregar_partit(const string &nom_fitxer)
+void notificar_jugadors_pista()
 {
-    // Codi per carregar el partit
+    // Codi per notificar als jugadors de la pista
 }
+
+void amonestar_jugador()
 {
+    // Codi per amonestar un jugador
 }
-void llegir_fitxer(const string &nom_fitxer)
+
+void substituir_jugador()
 {
-    // Codi per llegir el fitxer
+    // Codi per substituir un jugador
+}
+
+void entrar_opcions()
+{
+    string nom_fitxer;
+    cout << "Introdueix el nom del fitxer per carregar l'estat actual del partit: ";
+    cin >> nom_fitxer;
+}
+
+void carregar_partit()
+{
+    string nom_fitxer;
+    cout << "Introdueix el nom del fitxer del joc de proves: ";
+    cin >> nom_fitxer;
+
+    ifstream f;
+    string linia;
+    vector<string> items;
+    f.open(nom_fitxer);
+    int nLinies = 0;
+    if (!f.fail())
+    {
+        getline(f, linia);
+        getline(f, linia);
+        while (!f.eof())
+        {
+            items = tokens(linia, '\t', false);
+            /*
+            int id = stoi(items[0]);
+            string tipus = (items[1]);
+            string mida = (items[2]);
+
+            Hora horaMesDora;
+            horaMesDora.parseHora(items[3]);
+            Hora horaMesTardia;
+            horaMesTardia.parseHora(items[4]);
+
+            vols.emplace_back(id, tipus, mida, horaMesDora, horaMesTardia);
+            */
+
+            getline(f, linia);
+        }
+        cout << "S'ha llegit correctament el fitxer amb directori: " << nom_fitxer << endl;
+    }
+    else
+        throw "No s'ha pogut obrir el fitxer amb directori: " + nom_fitxer;
 }
 
 void mostrar_menu()
@@ -24,6 +82,7 @@ void mostrar_menu()
     cout << "2) Arbitre amonesta el jugador X" << endl;
     cout << "3) Entrenador ordena que el jugador X substitueix el jugador Y" << endl;
     cout << "0) Sortir" << endl;
+    cout << "Introdueix la teva opcio: " << endl;
 }
 
 void gestionar_opcio(int opcio)
@@ -51,24 +110,27 @@ void gestionar_opcio(int opcio)
 
 int main()
 {
-    list<shared_ptr<Jugador>> jugadors;
-    shared_ptr<Entrenador> entrenador;
-    shared_ptr<Arbitre> arbitre;
+    // Àrbitres fixos
+    shared_ptr<Arbitre> arbitre1 = nullptr;
+    shared_ptr<Arbitre> arbitre2 = nullptr;
 
-    string nom_fitxer;
-    cout << "Introdueix el nom del fitxer per carregar l'estat actual del partit: ";
-    cin >> nom_fitxer;
-    carregar_partit(nom_fitxer);
+    // Equips i els seus entrenadors
+    shared_ptr<Equip> equipLoc = make_shared<Equip>();
+    shared_ptr<Equip> equipVis = make_shared<Equip>();
 
-    cout << "Introdueix el nom del fitxer del joc de proves: ";
-    cin >> nom_fitxer;
-    llegir_fitxer(nom_fitxer);
+    shared_ptr<Entrenador> entrenadorLoc = nullptr;
+    shared_ptr<Entrenador> entrenadorVis = nullptr;
+
+    carregar_partit();
 
     int opcio;
     mostrar_menu();
+    entrar_opcions();
     cin >> opcio;
 
     gestionar_opcio(opcio);
+
+    cout << "Ha acabat el partit amb la victoria per golejada de l'equip d' en " << entrenadorLoc << "!!!" << endl;
 
     return 0;
 }

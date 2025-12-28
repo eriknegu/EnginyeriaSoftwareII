@@ -7,7 +7,16 @@ Jugador::Jugador()
 Jugador::~Jugador()
 {
 }
-
+Jugador::Jugador(string nom, string cognoms, int llicencia, int dorsal, Equip *equip, unique_ptr<rolAtacant> atac, unique_ptr<rolDefensant> defensa)
+    : Persona(nom, cognoms, llicencia),
+      _equip(equip),
+      _dorsal(dorsal),
+      _ataca(move(atac)),
+      _defensa(move(defensa)),
+      _estatActual(estatJugador::noSancionat),
+      _nExclusions(0)
+{
+}
 void Jugador::actualitza()
 {
 }
@@ -24,32 +33,70 @@ void Jugador::defensa()
 {
 }
 
-void Jugador::canviAtacant(RolAtacant atacant)
+string Jugador::rolActualAtac() const
+{
+    return _ataca->nom();
+}
+
+string Jugador::rolActualDefensa() const
+{
+    return _defensa->nom();
+}
+
+void Jugador::canviAtacant(unique_ptr<rolAtacant> atacant)
 {
 }
 
-void Jugador::canviDefensant(RolAtacant defensant)
+void Jugador::canviDefensant(unique_ptr<rolDefensant> defensant)
 {
 }
 
 void Jugador::rebreSancio(const string &Tipus)
 {
-    int Tarj_Equip = equip.quantesTarjetes();
-    if (tipus == "Amonestar")
+    if (Tipus == "Amonestar")
     {
-        if (estatActual == "Amonestat" || Tarj_Equip < 3)
+        if ((_equip->quantesTarjetes() < MAX_TARJETES_EQUIP))
         {
-            Tarj_Equip++;
+            if (_estatActual == estatJugador::noSancionat)
+            {
+                _estatActual = estatJugador::amonestat;
+                _equip->inc_tarjetes();
+            }
+            else if (_estatActual == estatJugador::amonestat) // Cada jugador nomes pot rebre una amonestacio
+            {
+                _estatActual = estatJugador::exclos;
+                _nExclusions++;
+                if (_nExclusions > MAX_EXCLUSIONS_JUGADOR) // Si supera el maxim de exclusions (2), a la 3a, es desqualifica
+                {
+                    _estatActual = estatJugador::desqualificat;
+                }
+                //_equip->substitueix(dorsalSurt, 0, std::move(nouAtac), std::move(nouDef)); // CAL MODIFICAR
+            }
+        }
+        else
+        {
+            _estatActual = estatJugador::exclos;
+            _nExclusions++;
+            if (_nExclusions > MAX_EXCLUSIONS_JUGADOR) // Si supera el maxim de exclusions (2), a la 3a, es desqualifica
+            {
+                _estatActual = estatJugador::desqualificat;
+            }
+            //_equip->substitueix(dorsalSurt, 0, std::move(nouAtac), std::move(nouDef)); // CAL MODIFICAR
         }
     }
-    else if (tipus == "Expulsar")
+
+    else if (Tipus == "Expulsar")
     {
-        _nExclusions++;
+        //...
+    }
+    else if (Tipus == "Desqualificar")
+    {
+        //...
     }
 }
 
 ostream &operator<<(ostream &os, const Jugador &j)
 {
-    os << j.nom() << "(" << Equip << ")" << "compta amb un total de" << _nExclusions << endl;
+    os << j.nom();
     return os;
 }

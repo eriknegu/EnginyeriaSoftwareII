@@ -1,16 +1,19 @@
 #ifndef ATAC_PIVOT_H
 #define ATAC_PIVOT_H
 
-#pragma once
+#include "rolAtacant.h"
+#include <string>
 
-class atac_pivot
+using namespace std;
+
+class atac_pivot : public rolAtacant
 {
 public:
-    atac_pivot();
-    ~atac_pivot();
+    atac_pivot();           // constructor per defecte
+    ~atac_pivot() override; // destructor virtual (override)
 
-private:
-
+    void ataca() override;       // implementa el comportament d'atac
+    string nom() const override; // nom del rol (per mostrar / debug)
 };
 
 #endif

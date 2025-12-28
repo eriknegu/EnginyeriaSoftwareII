@@ -1,16 +1,19 @@
 #ifndef DEFENSA_EXTREMESQUERRA_H
 #define DEFENSA_EXTREMESQUERRA_H
 
-#pragma once
+#include "rolDefensant.h"
+#include <string>
 
-class defensa_extremEsquerra
+using namespace std;
+
+class defensa_extremEsquerra : public rolDefensant
 {
 public:
-    defensa_extremEsquerra();
-    ~defensa_extremEsquerra();
+    defensa_extremEsquerra();           // constructor per defecte
+    ~defensa_extremEsquerra() override; // destructor virtual (override)
 
-private:
-
+    void defensa() override;     // implementa el comportament de defensa
+    string nom() const override; // nom del rol (per mostrar / debug)
 };
 
 #endif

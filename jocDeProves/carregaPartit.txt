@@ -4,29 +4,29 @@ ARBITRE Marc Garcia
 
 # EQUIP 1
 EQUIP Blava
-ENTRENADOR Albert Roca
+ENTRENADOR Jordi Regincos
 
 # JUGADORS EQUIP 1
-JUGADOR Blava Pau Soler        Porter            pista OK
-JUGADOR Blava Marc Vila        Extrem_Esquerra   pista OK
-JUGADOR Blava Jordi Casals     Central           pista AMONESTAT
-JUGADOR Blava Oriol Ferrer     Lateral_Dret      pista OK
-JUGADOR Blava Nil Puig         Pivot             pista OK
-JUGADOR Blava Eric Marti       Extrem_Dret       pista OK
-JUGADOR Blava Pol Serra                          banqueta OK
-JUGADOR Blava Arnau Bosch                        banqueta OK
+JUGADOR Blava Erik Nepomnjastsih        Porter            pista OK
+JUGADOR Blava Marc Tulsa        Extrem_Esquerra   pista OK
+JUGADOR Blava Josep Soler     Central           pista AMONESTAT
+JUGADOR Blava Pau Xiberta     Lateral_Dret      pista OK
+JUGADOR Blava Jeronimo Hernandez         Pivot             pista OK
+JUGADOR Blava Miquel Farreras       Extrem_Dret       pista OK
+JUGADOR Blava Pol Quel                          banqueta OK
+JUGADOR Blava Biel Bosch                        banqueta OK
 
 # EQUIP 2
 EQUIP Vermella
-ENTRENADOR Pau Martin
+ENTRENADOR Ignacio Martin
 
 # JUGADORS EQUIP 2
-JUGADOR Vermella Lluc Riera    Porter            pista OK
-JUGADOR Vermella Ivan Costa    Extrem_Esquerra   pista OK
-JUGADOR Vermella Biel Pons     Central           pista OK
-JUGADOR Vermella Alex Navarro  Lateral_Dret      pista OK
-JUGADOR Vermella Marc Torres                     banqueta EXCLOS
-JUGADOR Vermella Jan Mulet     Extrem_Dret       pista OK
-JUGADOR Vermella Ferran Gil                      banqueta OK
-JUGADOR Vermella Roger Planas                    banqueta OK
+JUGADOR Vermella Matias Segarra    Porter            pista OK
+JUGADOR Vermella David Martinez    Extrem_Esquerra   pista OK
+JUGADOR Vermella Eusebi Calle     Central           pista OK
+JUGADOR Vermella JoseLuis Munoz  Lateral_Dret      pista OK
+JUGADOR Vermella Ignacio Martin                     banqueta EXCLOS
+JUGADOR Vermella Joaquim Perez     Extrem_Dret       pista OK
+JUGADOR Vermella Miquel Feixas                      banqueta OK
+JUGADOR Vermella Francesc Castro                    banqueta OK
 

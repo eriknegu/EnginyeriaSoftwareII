@@ -1,16 +1,19 @@
 #ifndef ATAC_EXTREMDRET_H
 #define ATAC_EXTREMDRET_H
 
-#pragma once
+#include "rolAtacant.h"
+#include <string>
 
-class atac_extremDret
+using namespace std;
+
+class atac_extremDret : public rolAtacant
 {
 public:
-    atac_extremDret();
-    ~atac_extremDret();
+    atac_extremDret();           // constructor per defecte
+    ~atac_extremDret() override; // destructor virtual (override)
 
-private:
-
+    void ataca() override;       // implementa el comportament d'atac
+    string nom() const override; // nom del rol (per mostrar / debug)
 };
 
 #endif

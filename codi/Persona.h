@@ -11,7 +11,7 @@ public:
     Persona(string nom, string cognoms, int numllicencia) : _nom(nom), _cognoms(cognoms), _numllicencia(numllicencia) {}
     Persona();
     ~Persona();
-    virtual string nom() const;
+    virtual string nomComplet() const;
     virtual int numLlicencia() const;
 
 private:

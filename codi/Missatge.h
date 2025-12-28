@@ -12,11 +12,11 @@ class Missatge
 public:
     Missatge();
     ~Missatge();
-    Missatge(const string &text, const Persona &remitent);
+    Missatge(const string &text, const string &origen);
 
 private:
     string text;
-    Persona remitent;
+    string origen;
     time_t Data;
 };
 

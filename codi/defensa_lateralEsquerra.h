@@ -1,16 +1,19 @@
 #ifndef DEFENSA_LATERALESQUERRA_H
 #define DEFENSA_LATERALESQUERRA_H
 
-#pragma once
+#include "rolDefensant.h"
+#include <string>
 
-class defensa_lateralEsquerra
+using namespace std;
+
+class defensa_lateralEsquerra : public rolDefensant
 {
 public:
-    defensa_lateralEsquerra();
-    ~defensa_lateralEsquerra();
+    defensa_lateralEsquerra();           // constructor per defecte
+    ~defensa_lateralEsquerra() override; // destructor virtual (override)
 
-private:
-
+    void defensa() override;     // implementa el comportament de defensa
+    string nom() const override; // nom del rol (per mostrar / debug)
 };
 
 #endif

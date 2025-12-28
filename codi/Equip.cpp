@@ -2,18 +2,26 @@
 
 Equip::Equip()
 {
+    nom = "";
+    nTarjetes = 0;
+    anyFundacio = 0000;
 }
 
 Equip::~Equip()
 {
 }
 
-string NomEquip() const;
+string Equip::nomEquip() const
 {
-    return nomEquip;
+    return nom;
 }
 
-int nTarjetesEquip() const;
+int Equip::quantesTarjetes() const
 {
     return nTarjetes;
+}
+
+void Equip::inc_tarjetes()
+{
+    nTarjetes++;
 }

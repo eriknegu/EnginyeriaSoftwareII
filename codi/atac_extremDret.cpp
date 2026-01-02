@@ -1,11 +1,13 @@
 #include "atac_extremDret.h"
+#include <iostream>
 
-atac_extremDret::atac_extremDret()
+using namespace std;
+
+atac_extremDret::atac_extremDret() = default;
+
+atac_extremDret::~atac_extremDret() = default;
+
+void atac_extremDret::ataca()
 {
-
-}
-
-atac_extremDret::~atac_extremDret()
-{
-
+    cout << "[ATAC] Extrem Dret: finalitza per la banda dreta i aprofita l'angle.\n";
 }

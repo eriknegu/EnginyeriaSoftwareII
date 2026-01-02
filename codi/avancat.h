@@ -12,8 +12,7 @@ public:
     avancat();           // constructor per defecte
     ~avancat() override; // destructor virtual (override)
 
-    void defensa() override;     // implementa el comportament de defensa
-    string nom() const override; // nom del rol (per mostrar / debug)
+    void defensa() override; // implementa el comportament de defensa
 };
 
 #endif

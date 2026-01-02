@@ -1,11 +1,13 @@
 #include "defensa_lateralEsquerra.h"
+#include <iostream>
 
-defensa_lateralEsquerra::defensa_lateralEsquerra()
+using namespace std;
+
+defensa_lateralEsquerra::defensa_lateralEsquerra() = default;
+
+defensa_lateralEsquerra::~defensa_lateralEsquerra() = default;
+
+void defensa_lateralEsquerra::defensa()
 {
-
-}
-
-defensa_lateralEsquerra::~defensa_lateralEsquerra()
-{
-
+    cout << "[DEFENSA] Lateral Esquerra: dona suport al centre i tanca la seva zona.\n";
 }

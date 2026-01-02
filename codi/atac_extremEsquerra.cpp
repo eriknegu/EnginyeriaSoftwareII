@@ -1,11 +1,13 @@
 #include "atac_extremEsquerra.h"
+#include <iostream>
 
-atac_extremEsquerra::atac_extremEsquerra()
+using namespace std;
+
+atac_extremEsquerra::atac_extremEsquerra() = default;
+
+atac_extremEsquerra::~atac_extremEsquerra() = default;
+
+void atac_extremEsquerra::ataca()
 {
-
-}
-
-atac_extremEsquerra::~atac_extremEsquerra()
-{
-
+    cout << "[ATAC] ExtremEsquerra: ataca per l'esquerra i busca oportunitats de passada.\n";
 }

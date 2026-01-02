@@ -1,11 +1,13 @@
 #include "defensa_porter.h"
+#include <iostream>
 
-defensa_porter::defensa_porter()
+using namespace std;
+
+defensa_porter::defensa_porter() = default;
+
+defensa_porter::~defensa_porter() = default;
+
+void defensa_porter::defensa()
 {
-
-}
-
-defensa_porter::~defensa_porter()
-{
-
+    cout << "[DEFENSA] Porter: defensa la porteria i evita els gols.\n";
 }

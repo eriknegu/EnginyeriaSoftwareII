@@ -1,11 +1,13 @@
 #include "atac_central.h"
+#include <iostream>
 
-atac_central::atac_central()
+using namespace std;
+
+atac_central::atac_central() = default;
+
+atac_central::~atac_central() = default;
+
+void atac_central::ataca()
 {
-
-}
-
-atac_central::~atac_central()
-{
-
+    cout << "[ATAC] Central: dirigeix i organitza la jugada.\n";
 }

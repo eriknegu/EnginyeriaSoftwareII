@@ -1,11 +1,13 @@
 #include "atac_lateralDret.h"
+#include <iostream>
 
-atac_lateralDret::atac_lateralDret()
+using namespace std;
+
+atac_lateralDret::atac_lateralDret() = default;
+
+atac_lateralDret::~atac_lateralDret() = default;
+
+void atac_lateralDret::ataca()
 {
-
-}
-
-atac_lateralDret::~atac_lateralDret()
-{
-
+    cout << "[ATAC] Lateral Dret: ataca des de l'exterior i busca el xut creuat.\n";
 }

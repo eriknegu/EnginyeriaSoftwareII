@@ -1,11 +1,13 @@
 #include "lateralDretCentrat.h"
+#include <iostream>
 
-lateralDretCentrat::lateralDretCentrat()
+using namespace std;
+
+lateralDretCentrat::lateralDretCentrat() = default;
+
+lateralDretCentrat::~lateralDretCentrat() = default;
+
+void lateralDretCentrat::ataca()
 {
-
-}
-
-lateralDretCentrat::~lateralDretCentrat()
-{
-
+    cout << "[ATAC] Lateral Dret Centrat: es centra per obrir espais a la banda.\n";
 }

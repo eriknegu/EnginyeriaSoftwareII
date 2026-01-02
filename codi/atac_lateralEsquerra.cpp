@@ -1,11 +1,13 @@
 #include "atac_lateralEsquerra.h"
+#include <iostream>
 
-atac_lateralEsquerra::atac_lateralEsquerra()
+using namespace std;
+
+atac_lateralEsquerra::atac_lateralEsquerra() = default;
+
+atac_lateralEsquerra::~atac_lateralEsquerra() = default;
+
+void atac_lateralEsquerra::ataca()
 {
-
-}
-
-atac_lateralEsquerra::~atac_lateralEsquerra()
-{
-
+    cout << "[ATAC] Lateral Esquerra: entra en segona linia i dona suport a la circulacio.\n";
 }

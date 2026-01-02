@@ -1,11 +1,13 @@
 #include "defensa_extremEsquerra.h"
+#include <iostream>
 
-defensa_extremEsquerra::defensa_extremEsquerra()
+using namespace std;
+
+defensa_extremEsquerra::defensa_extremEsquerra() = default;
+
+defensa_extremEsquerra::~defensa_extremEsquerra() = default;
+
+void defensa_extremEsquerra::defensa()
 {
-
-}
-
-defensa_extremEsquerra::~defensa_extremEsquerra()
-{
-
+    cout << "[DEFENSA] Extrem Esquerra: pressiona la banda esquerra i impedeix la passada.\n";
 }

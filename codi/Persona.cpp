@@ -4,6 +4,8 @@ Persona::Persona()
 {
 }
 
+Persona::~Persona() = default;
+
 string Persona::nomComplet() const
 {
     return _nom + " " + _cognoms;

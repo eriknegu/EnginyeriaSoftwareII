@@ -12,8 +12,7 @@ public:
     atac_extremDret();           // constructor per defecte
     ~atac_extremDret() override; // destructor virtual (override)
 
-    void ataca() override;       // implementa el comportament d'atac
-    string nom() const override; // nom del rol (per mostrar / debug)
+    void ataca() override; // implementa el comportament d'atac
 };
 
 #endif

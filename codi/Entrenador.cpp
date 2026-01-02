@@ -35,9 +35,14 @@ void Entrenador::enviarMissatge(const string &text, const Abast &abast, const in
     }
 }
 
-void Entrenador::ferSubstitucio(int dorsalSurt, int dorsalEntra, unique_ptr<rolAtacant> nouAtac, unique_ptr<rolDefensant> nouDef)
+void Entrenador::ferSubstitucio(int dorsalSurt, int dorsalEntra, unique_ptr<rolAtacant> nouAtac, unique_ptr<rolDefensant> nouDef, const string &nomAtac, const string &nomDef)
 {
-    _equip->substitueix(dorsalSurt, dorsalEntra, move(nouAtac), move(nouDef));
+    _equip->substitueix(dorsalSurt, dorsalEntra, move(nouAtac), move(nouDef), nomAtac, nomDef);
+}
+
+list<shared_ptr<Jugador>> Entrenador::JugadorsPista() const
+{
+    return _equip ? _equip->jugadorsPista() : list<shared_ptr<Jugador>>{};
 }
 
 ostream &operator<<(ostream &os, const Entrenador &e)

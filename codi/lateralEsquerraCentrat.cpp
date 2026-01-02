@@ -1,11 +1,10 @@
 #include "lateralEsquerraCentrat.h"
 
-lateralEsquerraCentrat::lateralEsquerraCentrat()
+lateralEsquerraCentrat::lateralEsquerraCentrat() = default;
+
+lateralEsquerraCentrat::~lateralEsquerraCentrat() = default;
+
+void lateralEsquerraCentrat::ataca()
 {
-
-}
-
-lateralEsquerraCentrat::~lateralEsquerraCentrat()
-{
-
+    cout << "[ATAC] Lateral Esquerra Centrat: talla cap al centre per generar superioritat.\n";
 }

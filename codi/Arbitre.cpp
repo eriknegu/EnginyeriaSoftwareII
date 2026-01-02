@@ -7,19 +7,19 @@ Arbitre::Arbitre()
 Arbitre::~Arbitre()
 {
 }
-void Arbitre::sancionar(Jugador jug, string Gravetat)
+void Arbitre::sancionar(Jugador jug, string gravetat)
 {
     if (gravetat == "baixa")
     {
-        amonestar(jug);
+        // amonestar(jug);
     }
     else if (gravetat == "mitjana")
     {
-        desqualificar(jug);
+        // desqualificar(jug);
     }
     else if (gravetat == "greu")
     {
-        excloure(jug);
+        // excloure(jug);
     }
 }
 

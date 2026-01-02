@@ -1,4 +1,5 @@
 #include "Jugador.h"
+#include "Equip.h"
 
 Jugador::Jugador()
 {
@@ -7,6 +8,7 @@ Jugador::Jugador()
 Jugador::~Jugador()
 {
 }
+
 Jugador::Jugador(string nom, string cognoms, int llicencia, int dorsal, Equip *equip, unique_ptr<rolAtacant> atac, unique_ptr<rolDefensant> defensa)
     : Persona(nom, cognoms, llicencia),
       _equip(equip),
@@ -27,28 +29,34 @@ void Jugador::rebreMissatge(Missatge &missatge)
 
 void Jugador::ataca()
 {
+    rolActualAtac();
 }
 
 void Jugador::defensa()
 {
+    rolActualDefensa();
 }
 
-string Jugador::rolActualAtac() const
+void Jugador::rolActualAtac() const
 {
-    return _ataca->nom();
+    if (_ataca)
+        _ataca->ataca();
 }
 
-string Jugador::rolActualDefensa() const
+void Jugador::rolActualDefensa() const
 {
-    return _defensa->nom();
+    if (_defensa)
+        _defensa->defensa();
 }
 
 void Jugador::canviAtacant(unique_ptr<rolAtacant> atacant)
 {
+    _ataca = std::move(atacant);
 }
 
 void Jugador::canviDefensant(unique_ptr<rolDefensant> defensant)
 {
+    _defensa = std::move(defensant);
 }
 
 void Jugador::rebreSancio(const string &Tipus)
@@ -97,6 +105,6 @@ void Jugador::rebreSancio(const string &Tipus)
 
 ostream &operator<<(ostream &os, const Jugador &j)
 {
-    os << j.nom();
+    os << j.nomComplet();
     return os;
 }

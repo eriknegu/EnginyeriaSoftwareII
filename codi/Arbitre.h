@@ -8,6 +8,7 @@ class Arbitre : public Persona
 {
 public:
     Arbitre();
+    Arbitre(string nom, string cognoms, int llicencia) : Persona(nom, cognoms, llicencia) {}
     ~Arbitre();
     void sancionar(Jugador jug, string gravetat); // Fa falta posar al diagrama de classes el tipus
 

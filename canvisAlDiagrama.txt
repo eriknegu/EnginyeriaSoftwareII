@@ -9,5 +9,7 @@ Persona -> string, en comptes de guardar tota la persona guardem el nom complet.
 STRATEGY
 Hem d'afegir els porters
 
+ARBITRE
+Afegir la gravetat al sancionar
 
 

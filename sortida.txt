@@ -1,0 +1,84 @@
+S'ha llegit correctament el fitxer: ./jocDeProves/carregaPartit.txt
+
+================ ESTAT ACTUAL DEL PARTIT ================
+ARBITRES:
+ - Joan Perez
+ - Marc Garcia
+
+EQUIP LOCAL: F.C.BarceMona | Targetes equip: 0
+ENTRENADOR LOCAL: Jordi Regincos
+  Pista:
+   - Erik Nepomnjastsih | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+   - Marc Tulsa | Atac=ExtremEsquerra | Def=ExtremEsquerra | Estat=OK | Exclusions=0
+   - Josep Soler | Atac=Central | Def=Central | Estat=AMONESTAT | Exclusions=1
+   - Pau Xiberta | Atac=LateralDret | Def=LateralDret | Estat=OK | Exclusions=2
+   - Jeronimo Hernandez | Atac=Pivot | Def=Avancat | Estat=OK | Exclusions=0
+   - Miquel Farreras | Atac=ExtremDret | Def=ExtremDret | Estat=OK | Exclusions=0
+  Banqueta:
+   - Pol Quel | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+   - Biel Bosch | Atac=Cap | Def=Cap | Estat=OK | Exclusions=1
+
+EQUIP VISITANT: FalsMadrit | Targetes equip: 0
+ENTRENADOR VISITANT: Ignacio Martin
+  Pista:
+   - Matias Segarra | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+   - David Martinez | Atac=ExtremEsquerra | Def=ExtremEsquerra | Estat=OK | Exclusions=0
+   - Eusebi Calle | Atac=Central | Def=Central | Estat=AMONESTAT | Exclusions=1
+   - JoseLuis Munoz | Atac=LateralDret | Def=LateralDret | Estat=OK | Exclusions=2
+   - Ignacio Martin | Atac=Pivot | Def=Avancat | Estat=OK | Exclusions=0
+   - Joaquim Perez | Atac=ExtremDret | Def=ExtremDret | Estat=OK | Exclusions=0
+  Banqueta:
+   - Miquel Feixas | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+   - Francesc Castro | Atac=Cap | Def=Cap | Estat=OK | Exclusions=1
+=========================================================
+
+MENU PRINCIPAL
+1) Entrenador notifica als jugadors de la pista
+2) Arbitre amonesta el jugador X
+3) Entrenador ordena que el jugador X substitueix el jugador Y
+4) Mostrar estat actual del partit
+5) Carregar un fitxer d'opcions
+0) Sortir
+Introdueix la teva opcio: 
+Nom fitxer opcions: 
+================ ESTAT ACTUAL DEL PARTIT ================
+ARBITRES:
+ - Joan Perez
+ - Marc Garcia
+
+EQUIP LOCAL: F.C.BarceMona | Targetes equip: 0
+ENTRENADOR LOCAL: Jordi Regincos
+  Pista:
+   - Marc Tulsa | Atac=ExtremEsquerra | Def=ExtremEsquerra | Estat=OK | Exclusions=0
+   - Josep Soler | Atac=Central | Def=Central | Estat=AMONESTAT | Exclusions=1
+   - Pau Xiberta | Atac=LateralDret | Def=LateralDret | Estat=OK | Exclusions=2
+   - Jeronimo Hernandez | Atac=Pivot | Def=Avancat | Estat=OK | Exclusions=0
+   - Miquel Farreras | Atac=ExtremDret | Def=ExtremDret | Estat=OK | Exclusions=0
+   - Pol Quel | Atac=Cap | Def=Porter | Estat=OK | Exclusions=0
+  Banqueta:
+   - Biel Bosch | Atac=Cap | Def=Cap | Estat=OK | Exclusions=1
+   - Erik Nepomnjastsih | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+
+EQUIP VISITANT: FalsMadrit | Targetes equip: 0
+ENTRENADOR VISITANT: Ignacio Martin
+  Pista:
+   - Matias Segarra | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+   - David Martinez | Atac=ExtremEsquerra | Def=ExtremEsquerra | Estat=OK | Exclusions=0
+   - Eusebi Calle | Atac=Central | Def=Central | Estat=AMONESTAT | Exclusions=1
+   - JoseLuis Munoz | Atac=LateralDret | Def=LateralDret | Estat=OK | Exclusions=2
+   - Ignacio Martin | Atac=Pivot | Def=Avancat | Estat=OK | Exclusions=0
+   - Joaquim Perez | Atac=ExtremDret | Def=ExtremDret | Estat=OK | Exclusions=0
+  Banqueta:
+   - Miquel Feixas | Atac=Cap | Def=Cap | Estat=OK | Exclusions=0
+   - Francesc Castro | Atac=Cap | Def=Cap | Estat=OK | Exclusions=1
+=========================================================
+
+MENU PRINCIPAL
+1) Entrenador notifica als jugadors de la pista
+2) Arbitre amonesta el jugador X
+3) Entrenador ordena que el jugador X substitueix el jugador Y
+4) Mostrar estat actual del partit
+5) Carregar un fitxer d'opcions
+0) Sortir
+Introdueix la teva opcio: 
+Ha acabat el partit amb la victoria per golejada de l'equip d' en Jordi Regincos!!!

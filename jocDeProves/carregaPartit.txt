@@ -1,32 +1,30 @@
-# ARBITRES
-ARBITRE Joan Perez
-ARBITRE Marc Garcia
+# ARBITRES: tipus;nom;cognoms;llicencia
+ARBITRE;Joan;Perez;1001
+ARBITRE;Marc;Garcia;1002
 
-# EQUIP 1
-EQUIP Blava
-ENTRENADOR Jordi Regincos
+# EQUIPS: tipus;side;nom;anyFundacio
+EQUIP;LOCAL;F.C.BarceMona;1899
+EQUIP;VISITANT;FalsMadrit;1902
 
-# JUGADORS EQUIP 1
-JUGADOR Blava Erik Nepomnjastsih        Porter            pista OK
-JUGADOR Blava Marc Tulsa        Extrem_Esquerra   pista OK
-JUGADOR Blava Josep Soler     Central           pista AMONESTAT
-JUGADOR Blava Pau Xiberta     Lateral_Dret      pista OK
-JUGADOR Blava Jeronimo Hernandez         Pivot             pista OK
-JUGADOR Blava Miquel Farreras       Extrem_Dret       pista OK
-JUGADOR Blava Pol Quel                          banqueta OK
-JUGADOR Blava Biel Bosch                        banqueta OK
+# ENTRENADORS: tipus;side;nom;cognoms;llicencia
+ENTRENADOR;LOCAL;Jordi;Regincos;2001
+ENTRENADOR;VISITANT;Ignacio;Martin;2002
 
-# EQUIP 2
-EQUIP Vermella
-ENTRENADOR Ignacio Martin
+# JUGADORS: tipus;side;nom;cognoms;llicencia;dorsal;lloc;pista|banqueta;estat;OK|AMONESTAT|EXCLOS|DESQUALIFICAT;exclusions;rolAtac;rolDef
+JUGADOR;LOCAL;Erik;Nepomnjastsih;3001;1;pista;OK;0;Cap;Cap
+JUGADOR;LOCAL;Marc;Tulsa;3002;2;pista;OK;0;ExtremEsquerra;ExtremEsquerra
+JUGADOR;LOCAL;Josep;Soler;3003;3;pista;AMONESTAT;1;Central;Central
+JUGADOR;LOCAL;Pau;Xiberta;3004;4;pista;OK;2;LateralDret;LateralDret
+JUGADOR;LOCAL;Jeronimo;Hernandez;3005;5;pista;OK;0;Pivot;Avancat
+JUGADOR;LOCAL;Miquel;Farreras;3006;6;pista;OK;0;ExtremDret;ExtremDret
+JUGADOR;LOCAL;Pol;Quel;3007;7;banqueta;OK;0;Cap;Cap
+JUGADOR;LOCAL;Biel;Bosch;3008;8;banqueta;OK;1;Cap;Cap
 
-# JUGADORS EQUIP 2
-JUGADOR Vermella Matias Segarra    Porter            pista OK
-JUGADOR Vermella David Martinez    Extrem_Esquerra   pista OK
-JUGADOR Vermella Eusebi Calle     Central           pista OK
-JUGADOR Vermella JoseLuis Munoz  Lateral_Dret      pista OK
-JUGADOR Vermella Ignacio Martin                     banqueta EXCLOS
-JUGADOR Vermella Joaquim Perez     Extrem_Dret       pista OK
-JUGADOR Vermella Miquel Feixas                      banqueta OK
-JUGADOR Vermella Francesc Castro                    banqueta OK
-
+JUGADOR;VISITANT;Matias;Segarra;4001;1;pista;OK;0;Cap;Cap
+JUGADOR;VISITANT;David;Martinez;4002;2;pista;OK;0;ExtremEsquerra;ExtremEsquerra
+JUGADOR;VISITANT;Eusebi;Calle;4003;3;pista;AMONESTAT;1;Central;Central
+JUGADOR;VISITANT;JoseLuis;Munoz;4004;4;pista;OK;2;LateralDret;LateralDret
+JUGADOR;VISITANT;Ignacio;Martin;4005;5;pista;OK;0;Pivot;Avancat
+JUGADOR;VISITANT;Joaquim;Perez;4006;6;pista;OK;0;ExtremDret;ExtremDret
+JUGADOR;VISITANT;Miquel;Feixas;4007;7;banqueta;OK;0;Cap;Cap
+JUGADOR;VISITANT;Francesc;Castro;4008;8;banqueta;OK;1;Cap;Cap

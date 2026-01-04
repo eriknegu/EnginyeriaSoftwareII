@@ -4,7 +4,6 @@
 #include <list>
 #include <memory>
 #include <vector>
-#include <sstream>
 #include <string>
 
 #include "Arbitre.h"
@@ -151,7 +150,8 @@ static void mostra_llista(const list<shared_ptr<Jugador>> &l, const string &tito
     cout << "  " << titol << ":\n";
     for (const auto &j : l)
     {
-        cout << "   - " << j->nomComplet()
+        cout << "   - Dorsal " << j->dorsal()
+             << " | " << j->nomComplet()
              << " | Atac=" << j->nomRolAtac()
              << " | Def=" << j->nomRolDef()
              << " | Estat=" << estatToString(j->estat())
@@ -227,16 +227,16 @@ void substituir_jugador(shared_ptr<Entrenador> entrenador)
 
     mostra_estat_partit();
 
-    cout << "Dorsal que surt: ";
+    cout << "Dorsal que surt: \n";
     cin >> dorsalSurt;
-    cout << "Dorsal que entra: ";
+    cout << "Dorsal que entra: \n";
     cin >> dorsalEntra;
 
     mostraRols();
 
-    cout << "Rol d'ATAC (1..9, 0 = cap): ";
+    cout << "Rol d'ATAC (1..9, 0 = cap): \n";
     cin >> opAtac;
-    cout << "Rol de DEFENSA (1..7, 0 = cap): ";
+    cout << "Rol de DEFENSA (1..7, 0 = cap): \n";
     cin >> opDef;
 
     RolAtac ra = static_cast<RolAtac>(opAtac);
@@ -251,141 +251,6 @@ void substituir_jugador(shared_ptr<Entrenador> entrenador)
     entrenador->ferSubstitucio(dorsalSurt, dorsalEntra,
                                move(nouAtac), move(nouDef),
                                nomAtac, nomDef);
-}
-
-static bool executa_opcio_des_de_fitxer(int op, istream &in)
-{
-    switch (op)
-    {
-    case 1:
-        notificar_jugadors_pista();
-        return true;
-
-    case 2:
-        amonestar_jugador();
-        return true;
-
-    case 3:
-    {
-        int ent, dorsalSurt, dorsalEntra, opAtac, opDef;
-
-        // IMPORTANT: llegim els 5 números següents
-        if (!(in >> ent >> dorsalSurt >> dorsalEntra >> opAtac >> opDef))
-        {
-            cout << "Fitxer d'opcions incorrecte: falten valors per a l'opcio 3.\n";
-            return false; // talla l'script perquè està mal format
-        }
-
-        if (opAtac < 0 || opAtac > 9 || opDef < 0 || opDef > 7)
-        {
-            cout << "Rols fora de rang. Atac: 0..9, Defensa: 0..7\n";
-            return true; // continua, però aquesta comanda no es fa
-        }
-
-        auto entrenador = (ent == 1) ? entrenadorLoc : entrenadorVis;
-        if (!entrenador)
-        {
-            cout << "Entrenador no carregat\n";
-            return true;
-        }
-
-        RolAtac ra = static_cast<RolAtac>(opAtac);
-        RolDef rd = static_cast<RolDef>(opDef);
-
-        auto nouAtac = CreadorRols::creaRolAtac(ra);
-        auto nouDef = CreadorRols::creaRolDef(rd);
-
-        string nomAtac = rolAtacToString(ra);
-        string nomDef = rolDefToString(rd);
-
-        entrenador->ferSubstitucio(dorsalSurt, dorsalEntra,
-                                   move(nouAtac), move(nouDef),
-                                   nomAtac, nomDef);
-        return true;
-    }
-
-    case 4:
-        mostra_estat_partit();
-        return true;
-
-    case 0:
-        // 0 dins el fitxer = "tanca programa"
-        return false;
-
-    default:
-        cout << "Opcio script no valida: " << op << "\n";
-        return true;
-    }
-}
-
-static vector<string> split_ws(const string &line)
-{
-    istringstream iss(line);
-    vector<string> out;
-    string x;
-    while (iss >> x)
-        out.push_back(x);
-    return out;
-}
-
-static bool runScript(const string &nom_fitxer)
-{
-    ifstream f(nom_fitxer);
-    if (!f)
-    {
-        cout << "No s'ha pogut obrir: " << nom_fitxer << "\n";
-        return false;
-    }
-
-    string linia;
-    while (getline(f, linia))
-    {
-        if (linia.empty() || linia[0] == '#')
-            continue;
-
-        istringstream iss(linia);
-        int op;
-        iss >> op;
-
-        if (op == 0)
-            return true; // tanca programa
-        if (op == 4)
-        {
-            mostra_estat_partit();
-            continue;
-        }
-
-        if (op == 3)
-        {
-            int ent, dorsalSurt, dorsalEntra, opAtac, opDef;
-            if (!(iss >> ent >> dorsalSurt >> dorsalEntra >> opAtac >> opDef))
-            {
-                cout << "Línia opcio 3 mal formada\n";
-                continue;
-            }
-
-            auto entrenador = (ent == 1) ? entrenadorLoc : entrenadorVis;
-            if (!entrenador)
-            {
-                cout << "Entrenador no carregat\n";
-                continue;
-            }
-
-            auto nouAtac = CreadorRols::creaRolAtac(static_cast<RolAtac>(opAtac));
-            auto nouDef = CreadorRols::creaRolDef(static_cast<RolDef>(opDef));
-
-            string nomAtac = rolAtacToString(static_cast<RolAtac>(opAtac));
-            string nomDef = rolDefToString(static_cast<RolDef>(opDef));
-
-            entrenador->ferSubstitucio(dorsalSurt, dorsalEntra,
-                                       std::move(nouAtac), std::move(nouDef),
-                                       nomAtac, nomDef);
-            continue;
-        }
-
-        cout << "Opcio script no valida: " << op << "\n";
-    }
-    return false; // final del fitxer sense 0 => torna al menú
 }
 
 void carregar_partit()
@@ -520,7 +385,6 @@ void mostrar_menu()
     cout << "2) Arbitre amonesta el jugador X" << endl;
     cout << "3) Entrenador ordena que el jugador X substitueix el jugador Y" << endl;
     cout << "4) Mostrar estat actual del partit" << endl;
-    cout << "5) Carregar un fitxer d'opcions" << endl;
     cout << "0) Sortir" << endl;
     cout << "Introdueix la teva opcio: " << endl;
 }
@@ -539,7 +403,7 @@ void gestionar_opcio(int opcio)
             amonestar_jugador();
             break;
         case 3: // Entrenador ordena que el jugador X substitueix el jugador Y.
-            cout << "Quin entrenador vol fer la substitució? (1 = Local, 2 = Visitant): ";
+            cout << "Quin entrenador vol fer la substitució? (1 = Local, 2 = Visitant): \n";
             int entrenador_opcio;
             cin >> entrenador_opcio;
             if (entrenador_opcio == 1)
@@ -550,16 +414,6 @@ void gestionar_opcio(int opcio)
         case 4: // Mostrar estat actual del partit.
             mostra_estat_partit();
             break;
-        case 5: // Carregar un fitxer d'opcions.
-        {
-            string fitxer;
-            cout << "Nom fitxer opcions: ";
-            cin >> fitxer;
-
-            // si el script retorna true, pleguem programa
-            volSortir = runScript(fitxer);
-        }
-        break;
         case 0: // Sortir.
             volSortir = true;
             break;
